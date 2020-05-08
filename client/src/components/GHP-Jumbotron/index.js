@@ -2,10 +2,10 @@ import React from "react";
 
 function GHPJumbotron() {
   return (
-    <div class="container">
-      <div class="jumbotron text-center">
+    <div className="container">
+      <div className="jumbotron text-center">
         <svg
-          class="bd-placeholder-img rounded-circle"
+          className="bd-placeholder-img rounded-circle"
           width="140"
           height="140"
           xmlns="http://www.w3.org/2000/svg"
@@ -20,10 +20,10 @@ function GHPJumbotron() {
             140x140
           </text>
         </svg>
-        <h1 class="display-4">Melinda Gates</h1>
-        <p class="lead">@melindagates</p>
+        <h1 className="display-4">Melinda Gates</h1>
+        <p className="lead">@melindagates</p>
         <p>
-          <i class="fa fa-map-marker"></i> Seattle, WA
+          <i className="fa fa-map-marker"></i> Seattle, WA
         </p>
       </div>
     </div>
