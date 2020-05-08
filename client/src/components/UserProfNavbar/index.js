@@ -1,7 +1,6 @@
 import React from "react";
 
 function UserProfNavbar() {
-
   return (
     <div>
       <Navbar bg="dark" variant="dark">
