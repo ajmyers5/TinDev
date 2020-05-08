@@ -1,30 +1,39 @@
 import React from "react";
 
-function userLogin() {
+function UserLogin() {
 
 return (
-<div>
-<Form>
-  <Form.Group controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
-    </Form.Text>
-  </Form.Group>
+    <div className="container">
+      <form className="form-signin mt-5">
+        <div className="form-label-group">
+          <input
+            type="email"
+            id="inputEmail"
+            className="form-control mb-3"
+            placeholder="Username"
+            required=""
+            autofocus=""
+          />
+        </div>
 
-  <Form.Group controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-  <Form.Group controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form>
-</div>
-);
+        <div className="form-label-group">
+          <input
+            type="password"
+            id="inputPassword"
+            className="form-control mb-3"
+            placeholder="Password"
+            required=""
+          />
+        </div>
+
+        <button className="btn btn-lg btn-primary btn-block" type="submit">
+          Sign in
+        </button>
+        <p className="mt-5 mb-3 text-muted text-center">
+          © Tindev Prototype | 2020
+        </p>
+      </form>
+    </div>
+)
 }
-export default userLogin;
+export default UserLogin;

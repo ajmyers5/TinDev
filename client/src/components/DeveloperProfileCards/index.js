@@ -1,30 +1,58 @@
 import React from "react";
 
-function devProfileCard() {
+function DeveloperProfileCards() {
     return (
-<Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Joe Exotic</Card.Title>
-    <Card.Text>
-     That bitch Carol Baskin
-    </Card.Text>
+        <div class="card mb-3">
+        
+        <div class="card-body">
+          
 
-    <Button variant="primary far fa-thumbs-up">Like</Button>
-    <ButtonGroup toggle className="mb-2">
-    <ToggleButton type="checkbox" defaultChecked value="1">
-      Checked
-    </ToggleButton>
-  </ButtonGroup>
+          <div class="album py-5 bg-light">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <img
+                      class="card-img-top"
+                      data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                      alt="Thumbnail [100%x225]"
+                      style={
+                          ({height: "225px"}, {width: "100%"}, {display: "block"})
+                      }
+                      src="https://source.unsplash.com/random"
+                      data-holder-rendered="true"
+                    />
+                    <div class="card-body">
+                      <h1>Joe Exotic</h1>
+                      <p class="card-text">
+                        I am a Full Stack Web Developer based off Lenexa Kansas
+                      </p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            <i class="fa fa-thumbs-up"></i>
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            <i class="fa fa-times"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
 
-  <Button variant="primary far fa-thumbs-down">Dislike</Button>
-    <ButtonGroup toggle className="mb-2">
-    <ToggleButton type="checkbox" defaultChecked value="1">
-      Checked
-    </ToggleButton>
-  </ButtonGroup>
-  </Card.Body>
-</Card>
-    );
+     
+    )
 }
-export default devProfileCard;
+export default DeveloperProfileCards
