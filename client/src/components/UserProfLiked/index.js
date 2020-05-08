@@ -1,7 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
 function UserProfLiked() {
-  return <div></div>;
+  return (
+  
+     <div className="card-header"><i class="fa fa-users"></i> Liked users</div>
+
+  )
 }
 
 export default UserProfLiked;
