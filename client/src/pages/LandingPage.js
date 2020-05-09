@@ -1,14 +1,33 @@
-import React from "react";
-import GHPNavbar from "../components/GHP-Navbar";
-import DeveloperProfileCards from "../components/DeveloperProfileCards"
+import React, { Component } from "react";
+import Navbar from "../components/Navbar";
+import axios from "axios";
 
-function LandingPage() {
-    return(
-        <div>
-            <GHPNavbar />
-            <DeveloperProfileCards />
-        </div>
-    )
-} 
+class LandingPage extends Component {
+  state = {
+    users: [],
+  };
 
-export default LandingPage
+  componentDidMount() {
+    console.log(this.props.match.params.id);
+    axios
+      .get("/devs", {
+        headers: {
+          user: this.props.match.params.id,
+        },
+      })
+      .then((response) => {
+        console.log(response);
+      });
+  }
+
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <h1>Landing page</h1>
+      </div>
+    );
+  }
+}
+
+export default LandingPage;
