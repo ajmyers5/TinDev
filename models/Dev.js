@@ -31,11 +31,11 @@ const DevSchema = new Schema(
     numFollowing: {
       type: Number,
       required: true
-    }
+    },
 
     locationOfUser: {
       type: String,
-    }
+    },
 
 
 
