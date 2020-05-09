@@ -31,6 +31,7 @@ module.exports = {
     const response = await axios
       .get(`https://api.github.com/users/${username}`)
       .catch((err) => res.status(422).json(err));
+    console.log(response);
 
     const { name, bio, avatar_url: avatar } = response.data;
 

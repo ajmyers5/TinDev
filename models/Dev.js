@@ -15,6 +15,30 @@ const DevSchema = new Schema(
       type: String,
       required: true,
     },
+    // number of repos, followers, following, languages
+    numRepos: {
+      //public_repos
+      type: Number,
+      required: true,
+    },
+
+    numFollowers: {
+      //followers
+      type: Number,
+      required: true
+    }, 
+
+    numFollowing: {
+      type: Number,
+      required: true
+    }
+
+    locationOfUser: {
+      type: String,
+    }
+
+
+
     likes: [
       {
         type: Schema.Types.ObjectId,
