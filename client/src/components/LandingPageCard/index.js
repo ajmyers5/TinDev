@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Button } from "react-bootstrap";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class LandingPageCard extends Component {
   render() {
@@ -12,12 +13,14 @@ class LandingPageCard extends Component {
             <Card.Title>{this.props.name}</Card.Title>
             <Card.Text>{this.props.bio}</Card.Text>
             <Fragment>
-              <Button
-                style={{ marginLeft: "0.2rem", marginRight: "0.2rem" }}
-                variant="info"
-              >
-                <i className="fa fa-eye"></i>
-              </Button>
+              <Link to={`/githubuser/${this.props.id}`}>
+                <Button
+                  style={{ marginLeft: "0.2rem", marginRight: "0.2rem" }}
+                  variant="info"
+                >
+                  <i className="fa fa-eye"></i>
+                </Button>
+              </Link>
               <Button
                 style={{ marginLeft: "0.2rem", marginRight: "0.2rem" }}
                 variant="success"

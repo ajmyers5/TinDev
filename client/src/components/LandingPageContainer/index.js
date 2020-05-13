@@ -9,6 +9,7 @@ function LandingPageContainer(props) {
           {props.users.map((user) => (
             <LandingPageCard
               key={user._id}
+              github={user.user}
               id={user._id}
               img_url={user.avatar}
               name={user.name}
