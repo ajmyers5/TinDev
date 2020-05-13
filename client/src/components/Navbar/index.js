@@ -8,7 +8,8 @@ function Navbar(props) {
           <i className="fa fa-fire"></i> Tindev
         </a>
         <a className="navbar-brand" href="/">
-          <i className="fa fa-user"></i>{props.name}</a>
+          <i className="fa fa-user"></i> {props.name}
+        </a>
         <a className="btn btn-secondary my-2 my-sm-0" type="submit" href="/">
           Logout
         </a>

@@ -6,6 +6,7 @@ import LandingPageContainer from "../components/LandingPageContainer";
 class LandingPage extends Component {
   state = {
     users: [],
+    user: [],
   };
 
   componentDidMount() {
@@ -16,9 +17,21 @@ class LandingPage extends Component {
         },
       })
       .then((response) => {
-        console.log("Logged in successfully");
+        console.log("Login Successful, users being loaded");
         console.log(response);
         this.setState({ users: response.data });
+      });
+
+    axios
+      .get("/dev", {
+        headers: {
+          user: this.props.match.params.id,
+        },
+      })
+      .then((response) => {
+        console.log("Current User is pulled");
+        console.log(response);
+        this.setState({ user: response.data.name });
       });
   }
 
@@ -44,7 +57,7 @@ class LandingPage extends Component {
   render() {
     return (
       <div>
-        <Navbar/>
+        <Navbar name={this.state.user} />
         <LandingPageContainer
           users={this.state.users}
           handleLike={this.handleLike}
