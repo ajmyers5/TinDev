@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "../components/Navbar";
 import axios from "axios";
-import LandingPageCard from "../components/LandingPageCard/index"
+import LandingPageContainer from "../components/LandingPageContainer";
 
 class LandingPage extends Component {
   state = {
@@ -9,7 +9,6 @@ class LandingPage extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props.match.params.id);
     axios
       .get("/devs", {
         headers: {
@@ -17,23 +16,40 @@ class LandingPage extends Component {
         },
       })
       .then((response) => {
+        console.log("Logged in successfully");
         console.log(response);
-        this.setState({users: response.data})
-
-       
+        this.setState({ users: response.data });
       });
   }
+
+  handleLike = (id) => {
+    axios.post(`/devs/${id}/likes`, null, {
+      headers: { user: this.props.match.params.id },
+    });
+    this.setState({
+      users: this.state.users.filter((user) => user._id !== id),
+    });
+  };
+
+  handleDisLike = (id) => {
+    axios.post(`/devs/${id}/dislikes`, null, {
+      headers: { user: this.props.match.params.id },
+    });
+
+    this.setState({
+      users: this.state.users.filter((user) => user._id !== id),
+    });
+  };
 
   render() {
     return (
       <div>
         <Navbar />
-        <div className="container">
-          <div className="row">
-        { this.state.users.map(user => <div className="col"><LandingPageCard data={user} /> </div>)}
-        
-        </div>
-        </div>
+        <LandingPageContainer
+          users={this.state.users}
+          handleLike={this.handleLike}
+          handleDislike={this.handleDisLike}
+        />
       </div>
     );
   }
