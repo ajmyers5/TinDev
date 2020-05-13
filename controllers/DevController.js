@@ -33,26 +33,28 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
     console.log(response);
 
-    const {
-      name,
-      bio,
-      avatar_url: avatar,
-      public_repos,
-      followers,
-      following,
-      location,
-    } = response.data;
+    // const {
+    //   name,
+    //   bio,
+    //   avatar_url: avatar,
+    //   // public_repos,
+    //   // followers,
+    //   // following,
+    //   // location,
+    // } = response.data;
 
-    const dev = await Dev.create({
-      name,
-      user: username,
-      bio,
-      avatar,
-      numRepos: public_repos,
-      numFollowers: followers,
-      numFollowing: following,
-      locationOfUser: location,
-    });
+    let devObject = {};
+
+    devObject.name = response.data.name;
+    devObject.bio = response.data.bio;
+    devObject.avatar = response.data.avatar_url;
+    devObject.user = username;
+    devObject.numRepos = response.data.public_repos;
+    devObject.numFollowers = response.data.followers;
+    devObject.numFollowing = response.data.following;
+    devObject.locationOfUser = response.data.location;
+
+    const dev = await Dev.create(devObject);
 
     return res.status(200).json(dev);
   },

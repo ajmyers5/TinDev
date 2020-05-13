@@ -15,29 +15,25 @@ const DevSchema = new Schema(
       type: String,
       required: true,
     },
-    // number of repos, followers, following, languages
+
     numRepos: {
-      //public_repos
       type: Number,
       required: true,
     },
 
     numFollowers: {
-      //followers
       type: Number,
-      required: true
-    }, 
+      required: true,
+    },
 
     numFollowing: {
       type: Number,
-      required: true
+      required: true,
     },
 
     locationOfUser: {
       type: String,
     },
-
-
 
     likes: [
       {

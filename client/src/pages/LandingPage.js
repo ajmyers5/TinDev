@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "../components/Navbar";
 import axios from "axios";
+import LandingPageCard from "../components/LandingPageCard/index"
 
 class LandingPage extends Component {
   state = {
@@ -17,6 +18,9 @@ class LandingPage extends Component {
       })
       .then((response) => {
         console.log(response);
+        this.setState({users: response.data})
+
+       
       });
   }
 
@@ -24,7 +28,12 @@ class LandingPage extends Component {
     return (
       <div>
         <Navbar />
-        <h1>Landing page</h1>
+        <div className="container">
+          <div className="row">
+        { this.state.users.map(user => <div className="col"><LandingPageCard data={user} /> </div>)}
+        
+        </div>
+        </div>
       </div>
     );
   }
