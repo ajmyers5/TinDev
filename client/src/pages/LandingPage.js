@@ -44,7 +44,7 @@ class LandingPage extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar/>
         <LandingPageContainer
           users={this.state.users}
           handleLike={this.handleLike}
