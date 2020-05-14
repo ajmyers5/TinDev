@@ -1,29 +1,14 @@
 import React from "react";
 
-function GHPJumbotron() {
+function GHPJumbotron(props) {
   return (
     <div className="container">
       <div className="jumbotron text-center">
-        <svg
-          className="bd-placeholder-img rounded-circle"
-          width="140"
-          height="140"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-          role="img"
-          aria-label="Placeholder: 140x140"
-        >
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#777"></rect>
-          <text x="50%" y="50%" fill="#777" dy=".3em">
-            140x140
-          </text>
-        </svg>
-        <h1 className="display-4">Melinda Gates</h1>
-        <p className="lead">@melindagates</p>
+        <img src={props.avatar} alt={props.name}></img>
+        <h1 className="display-4">{props.name}</h1>
+  <p className="lead">@{props.user}</p>
         <p>
-          <i className="fa fa-map-marker"></i> Seattle, WA
+          <i className="fa fa-map-marker"></i>  {props.location}
         </p>
       </div>
     </div>
