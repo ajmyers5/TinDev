@@ -8,6 +8,7 @@ import UserProfGHCard from "../components/UserProfGHCard/index";
 class UserProfile extends Component {
   state = {
     user: [],
+    likedUsers: [],
   };
 
   componentDidMount() {
@@ -18,10 +19,30 @@ class UserProfile extends Component {
         },
       })
       .then((response) => {
-        console.log(response);
         this.setState({
           user: response.data,
         });
+
+        // Get IDs of liked users
+        // GET request
+        // Push it into the state's Array
+
+        if (this.state.user.likes.length > 0) {
+          const likedUsersData = [];
+          this.state.user.likes.forEach((id) => {
+            axios
+              .get("/dev", {
+                headers: {
+                  user: id,
+                },
+              })
+              .then((response) => {
+                likedUsersData.push(response.data);
+                this.setState({ likedUsers: likedUsersData });
+                console.log(response.data);
+              });
+          });
+        }
       });
   }
 
@@ -31,7 +52,7 @@ class UserProfile extends Component {
         <Navbar user={this.state.user} />
         <UserProfSearch />
         <UserProfLiked />
-        <UserProfGHCard likedUsers={this.state.user.likes} />
+        <UserProfGHCard likedUsers={this.state.likedUsers} />
       </div>
     );
   }
