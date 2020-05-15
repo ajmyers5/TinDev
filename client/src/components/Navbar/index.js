@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Navbar(props) {
-  console.log("tae");
-  console.log(props);
   return (
     <nav className="navbar navbar-dark bg-primary">
       <div className="container">

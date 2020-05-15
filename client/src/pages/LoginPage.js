@@ -18,7 +18,6 @@ class LoginPage extends Component {
     e.preventDefault();
 
     axios.post("/devs", { username: this.state.username }).then((response) => {
-      console.log(response);
       if (response.status === 200) {
         const { _id } = response.data;
         this.props.history.push(`/dev/${_id}`);
