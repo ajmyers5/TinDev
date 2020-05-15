@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar/index";
 import UserProfSearch from "../components/UserProfSearch/index";
-import UserProfLiked from "../components/UserProfLiked/index";
 import UserProfGHCard from "../components/UserProfGHCard/index";
 
 class UserProfile extends Component {
@@ -45,9 +44,10 @@ class UserProfile extends Component {
     return (
       <div>
         <Navbar user={this.state.user} />
-        <UserProfSearch />
-        <UserProfLiked />
-        <UserProfGHCard likedUsers={this.state.likedUsers} />
+        <div className="container">
+          <UserProfSearch />
+          <UserProfGHCard likedUsers={this.state.likedUsers} />
+        </div>
       </div>
     );
   }

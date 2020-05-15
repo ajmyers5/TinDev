@@ -1,36 +1,35 @@
-import React, { Fragment } from "react";
-import { Button } from "react-bootstrap";
-import { Card } from "react-bootstrap";
+import React from "react";
+
+const imageStyle = {
+  width: "100px",
+  heigth: "100px",
+};
 
 function UserProfGHCard(props) {
   return (
-    <div>
-      {props.likedUsers.map((user) => (
-        <div className="col-md-4 mb-4 shadow-sm">
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={user.avatar} />
-            <Card.Body>
-              <Card.Title>{user.name}</Card.Title>
-              <Card.Text>{user.bio}</Card.Text>
-              <Fragment>
-                <a
-                  href={`mailto:${user.email}`}
-                  style={{ marginLeft: "0.2rem", marginRight: "0.2rem" }}
-                  variant="info"
-                >
-                  <i className="fa fa-envelope"></i>
-                </a>
-                <Button
-                  style={{ marginLeft: "0.2rem", marginRight: "0.2rem" }}
-                  variant="primary"
-                >
-                  <i className="fa fa-times"></i>
-                </Button>
-              </Fragment>
-            </Card.Body>
-          </Card>
-        </div>
-      ))}
+    <div className="card">
+      <div className="card-header">
+        <i className="fa fa-users"></i> Liked Users
+      </div>
+      <ul className="list-group">
+        {props.likedUsers.map((user) => (
+          <li
+            className="list-group-item d-flex justify-content-between align-items-center"
+            key={user._id}
+          >
+            <img
+              className="rounded-circle"
+              src={user.avatar}
+              alt={user.name}
+              style={imageStyle}
+            />
+            <h1>{user.name}</h1>
+            <a href={`mailto:${user.email}`}>
+              <i className="fa fa-envelope"></i>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
