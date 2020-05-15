@@ -5,9 +5,9 @@ function Navbar(props) {
   return (
     <nav className="navbar navbar-dark bg-primary">
       <div className="container">
-        <a className="navbar-brand" href="/">
+        <button className="navbar-brand btn btn-primary" disabled={true}>
           <i className="fa fa-fire"></i> Tindev
-        </a>
+        </button>
         <Link to={`/userprofile/${props.user._id}`} className="navbar-brand">
           <i className="fa fa-user"></i> {props.user.name}
         </Link>

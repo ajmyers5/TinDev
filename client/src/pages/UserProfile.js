@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar/index";
-import UserProfSearch from "../components/UserProfSearch/index";
 import UserProfGHCard from "../components/UserProfGHCard/index";
 
 class UserProfile extends Component {
@@ -44,8 +43,7 @@ class UserProfile extends Component {
     return (
       <div>
         <Navbar user={this.state.user} />
-        <div className="container">
-          <UserProfSearch />
+        <div className="container mt-5">
           <UserProfGHCard likedUsers={this.state.likedUsers} />
         </div>
       </div>
