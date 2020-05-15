@@ -2,10 +2,10 @@ import React from "react";
 
 function UserProfLiked() {
   return (
-  
-     <div className="card-header"><i class="fa fa-users"></i> Liked users</div>
-
-  )
+    <div className="card-header">
+      <i className="fa fa-users"></i> Liked Users
+    </div>
+  );
 }
 
 export default UserProfLiked;

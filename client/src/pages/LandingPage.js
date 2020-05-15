@@ -31,7 +31,7 @@ class LandingPage extends Component {
       .then((response) => {
         console.log("Current User is pulled");
         console.log(response);
-        this.setState({ user: response.data.name });
+        this.setState({ user: response.data });
       });
   }
 
@@ -57,7 +57,7 @@ class LandingPage extends Component {
   render() {
     return (
       <div>
-        <Navbar name={this.state.user} />
+        <Navbar user={this.state.user} />
         <LandingPageContainer
           users={this.state.users}
           handleLike={this.handleLike}
