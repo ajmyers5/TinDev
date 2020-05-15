@@ -49,6 +49,7 @@ module.exports = {
     devObject.numFollowers = response.data.followers;
     devObject.numFollowing = response.data.following;
     devObject.locationOfUser = response.data.location;
+    devObject.email = response.data.email;
 
     const dev = await Dev.create(devObject);
 
