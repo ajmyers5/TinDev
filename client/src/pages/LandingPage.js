@@ -17,8 +17,6 @@ class LandingPage extends Component {
         },
       })
       .then((response) => {
-        console.log("Login Successful, users being loaded");
-        console.log(response);
         this.setState({ users: response.data });
       });
 
@@ -29,8 +27,6 @@ class LandingPage extends Component {
         },
       })
       .then((response) => {
-        console.log("Current User is pulled");
-        console.log(response);
         this.setState({ user: response.data });
       });
   }
