@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 function Navbar(props) {
   return (
@@ -11,10 +10,12 @@ function Navbar(props) {
         >
           <i className="fa fa-fire"></i> Tindev
         </a>
-        <Link to={`/userprofile/${props.user._id}`} className="navbar-brand">
-          <i className="fa fa-user"></i> {props.user.name}
-        </Link>
-
+        <a
+          className="navbar-brand btn btn-primary"
+          href={`/userprofile/${props.user._id}`}
+        >
+          <i className="fa fa-user"></i> {props.user.name}{" "}
+        </a>
         <a className="btn btn-secondary my-2 my-sm-0" type="submit" href="/">
           Logout
         </a>

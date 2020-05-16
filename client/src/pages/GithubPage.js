@@ -7,6 +7,7 @@ import GHPCard from "../components/GHP-Card";
 class GithubPage extends Component {
   state = {
     user: [],
+    loggedUser: [],
   };
 
   componentDidMount() {
@@ -17,16 +18,27 @@ class GithubPage extends Component {
         },
       })
       .then((response) => {
-        console.log(response);
         this.setState({
           user: response.data,
+        });
+      });
+
+    axios
+      .get("/dev", {
+        headers: {
+          user: this.props.match.params.user,
+        },
+      })
+      .then((response) => {
+        this.setState({
+          loggedUser: response.data,
         });
       });
   }
   render() {
     return (
       <div>
-        <Navbar user={this.state.user}></Navbar>
+        <Navbar user={this.state.loggedUser}></Navbar>
         <GHPJumbotron
           name={this.state.user.name}
           user={this.state.user.user}

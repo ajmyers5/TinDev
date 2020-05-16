@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class LandingPageCard extends Component {
   render() {
     const cardStyle = {
-      height: "80%",
+      height: "90%",
     };
 
     const cardImage = {
@@ -26,7 +26,9 @@ class LandingPageCard extends Component {
         </Card>
         <Card className="mt-2">
           <Card.Body className="mx-auto">
-            <Link to={`/githubuser/${this.props.id}`}>
+            <Link
+              to={`/githubuser/${this.props.id}/${this.props.loggedUserId}`}
+            >
               <Button
                 style={{ marginLeft: "0.2rem", marginRight: "0.2rem" }}
                 variant="info"

@@ -8,6 +8,7 @@ function LandingPageContainer(props) {
         <div className="row">
           {props.users.map((user) => (
             <LandingPageCard
+              loggedUserId={props.user._id}
               key={user._id}
               github={user.user}
               id={user._id}

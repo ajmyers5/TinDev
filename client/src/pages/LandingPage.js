@@ -55,6 +55,7 @@ class LandingPage extends Component {
       <div>
         <Navbar user={this.state.user} />
         <LandingPageContainer
+          user={this.state.user}
           users={this.state.users}
           handleLike={this.handleLike}
           handleDislike={this.handleDisLike}
