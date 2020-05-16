@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-mongoose.connect("mongodb://localhost/tindev", {
+mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/tindev", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
