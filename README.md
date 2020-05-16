@@ -12,8 +12,10 @@ TinDev is a networking app that allows developers to sift through Github profile
 We wanted to create an app that would aid developers in their search for those seeking help on a future project or assistance on a current project.   
 
 ## Screenshots
-![Capture](https://user-images.githubusercontent.com/56177334/82126430-59fc6300-9772-11ea-9915-5f8248decc6e.JPG)
+![Capture](https://user-images.githubusercontent.com/56177334/82126583-4a314e80-9773-11ea-9ae1-1f262efc4198.JPG)
+
 ![Capture3](https://user-images.githubusercontent.com/56177334/82126444-857f4d80-9772-11ea-809a-ff3d60998e72.JPG)
+
 ![Capture2](https://user-images.githubusercontent.com/56177334/82126450-90d27900-9772-11ea-83f0-922eb5a503c1.JPG)
 
 
