@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class LandingPageCard extends Component {
   render() {
     const cardStyle = {
-      height: "90%",
+      height: "85%",
     };
 
     const cardImage = {
@@ -16,7 +16,7 @@ class LandingPageCard extends Component {
     };
 
     return (
-      <div className="col-md-4 mb-4">
+      <div className="col-md-4 mb-4 mt-2">
         <Card style={cardStyle}>
           <Card.Img style={cardImage} variant="top" src={this.props.img_url} />
           <Card.Body>
