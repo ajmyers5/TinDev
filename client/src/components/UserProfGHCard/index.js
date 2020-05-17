@@ -23,7 +23,9 @@ function UserProfGHCard(props) {
               alt={user.name}
               style={imageStyle}
             />
-            <h1>{user.name}</h1>
+            <a href={`/githubuser/${user._id}/${props.loggedUser._id}`}>
+              {user.name}
+            </a>
             <a href={`mailto:${user.email}`}>
               <i className="fa fa-envelope"></i>
             </a>

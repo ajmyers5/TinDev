@@ -44,7 +44,10 @@ class UserProfile extends Component {
       <div>
         <Navbar user={this.state.user} />
         <div className="container mt-5">
-          <UserProfGHCard likedUsers={this.state.likedUsers} />
+          <UserProfGHCard
+            loggedUser={this.state.user}
+            likedUsers={this.state.likedUsers}
+          />
         </div>
       </div>
     );
